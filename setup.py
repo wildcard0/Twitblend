@@ -9,7 +9,7 @@ assert version_info >= (3, 7, 0), "twitblend.py requires >= Python 3.7"
 
 setup(
     name="twitblend",
-    version='1',
+    version="1",
     description=("blend tweets"),
     long_description="blend tweets",
     packages=["twitblend"],
@@ -24,7 +24,5 @@ setup(
     ),
     python_requires=">=3.7",
     install_requires=["click", "tweepy"],
-    entry_points={
-        "console_scripts": ["twitblend = twitblend.cli:blend"]
-    },
+    entry_points={"console_scripts": ["twitblend = twitblend.cli:blend"]},
 )

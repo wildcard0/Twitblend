@@ -57,6 +57,6 @@ class Twitblend:
         markov = Markov(words)
         for i in range(self.user_bundle["num_generated"]):
             text = markov.generate_markov_text()
-            #text = bytes(text, "utf8")
+            # text = bytes(text, "utf8")
             generated.append(text)
         return generated
