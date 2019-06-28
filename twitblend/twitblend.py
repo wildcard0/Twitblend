@@ -2,7 +2,6 @@
 
 import asyncio
 import csv
-import glob
 import logging
 import os
 
@@ -45,7 +44,10 @@ class Twitblend:
         self.loop.run_until_complete(asyncio.gather(*gat))
 
     def blend(self):
-        files = glob.glob(os.path.join(self.user_bundle["cache_dir"], "*.csv"))
+        files = [
+            os.path.join(self.user_bundle["cache_dir"], f"{user}_tweets.csv")
+            for user in self.usernames
+        ]
         words = []
         for fl in files:
             with open(fl, "r") as f:
