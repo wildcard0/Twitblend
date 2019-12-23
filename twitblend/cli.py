@@ -65,6 +65,11 @@ def blend(
         ):
             click.echo("full key set or key file is needed")
             return
+        else:
+            user_bundle["consumer_key"] = consumer_key
+            user_bundle["consumer_secret"] = consumer_secret
+            user_bundle["access_key"] = access_key
+            user_bundle["access_secret"] = access_secret
     else:
         if (
             consumer_key is None
@@ -79,6 +84,7 @@ def blend(
     user_bundle["cache_dir"] = cache_dir
     user_bundle["num_generated"] = num_generated
     user_bundle["verbose"] = verbose
+    print(user_bundle)
     tb = Twitblend(username, user_bundle)
     tb.pull_cache(False)
     values = tb.blend()
