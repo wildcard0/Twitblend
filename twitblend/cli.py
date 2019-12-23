@@ -84,7 +84,6 @@ def blend(
     user_bundle["cache_dir"] = cache_dir
     user_bundle["num_generated"] = num_generated
     user_bundle["verbose"] = verbose
-    print(user_bundle)
     tb = Twitblend(username, user_bundle)
     tb.pull_cache(False)
     values = tb.blend()
