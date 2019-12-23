@@ -55,6 +55,7 @@ def blend(
     if verbose:
         logging.basicConfig(level=logging.DEBUG)
 
+    user_bundle = {}
     if key_file is None:
         if (
             consumer_key is None
